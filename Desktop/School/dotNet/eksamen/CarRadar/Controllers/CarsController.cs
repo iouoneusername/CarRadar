@@ -26,30 +26,10 @@ namespace CarRadar.Controllers
 
         // GET: Cars
         public async Task<IActionResult> Index(string brand, string model, int priceFrom = 0, int priceTo = 10000000, int yearFrom = 0, int yearTo = 2100)
-        {
+        {            
+            var cars = _repository.Search(brand, model, priceFrom, priceTo, yearFrom, yearTo, _context);
 
-            //GET CARS FROM DB
-            var cars = from c in _context.Car select c;
-
-            //IF BRAND IS NOT NULL, SELECT CONTAINS
-            if (!string.IsNullOrEmpty(brand))
-            {
-               cars = cars.Where(s => s.Brand.Contains(brand));
-            }
-
-            //IF MODEL IS NOT NULL, SELECT CONTAINS
-            if (!string.IsNullOrEmpty(model))
-            {
-                cars = cars.Where(x => x.Model.Contains(model));
-            }
-
-            //WE DEFAULT VALUES FOR PRICE AND YEAR
-            cars = cars.Where(x => x.Price >= priceFrom);
-            cars = cars.Where(x => x.Price <= priceTo);
-            cars = cars.Where(x => x.Year >= yearFrom);
-            cars = cars.Where(x => x.Year <= yearTo);
-
-            return View(await cars.ToListAsync());
+            return View(await cars);
         }
 
 
@@ -57,18 +37,11 @@ namespace CarRadar.Controllers
         // GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var car = await _context.Car
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var car = await _repository.Details(id, _context);
             if (car == null)
             {
                 return NotFound();
             }
-
             return View(car);
         }
 
@@ -90,8 +63,9 @@ namespace CarRadar.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(car);
-                await _context.SaveChangesAsync();
+                var tCar = await _repository.Create(car, _context);
+                //_context.Add(car);
+                //await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(car);
@@ -100,10 +74,6 @@ namespace CarRadar.Controllers
         // GET: Cars/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
             var car = await _context.Car.FindAsync(id);
             if (car == null)
@@ -173,9 +143,7 @@ namespace CarRadar.Controllers
 //        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var car = await _context.Car.FindAsync(id);
-            _context.Car.Remove(car);
-            await _context.SaveChangesAsync();
+            var car = await _repository.DeleteConfirmed(id, _context);
             return RedirectToAction(nameof(Index));
         }
 
