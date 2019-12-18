@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CarRadar.Data;
 using CarRadar.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace CarRadar.Controllers
 {
@@ -68,15 +70,18 @@ namespace CarRadar.Controllers
         }
 
         // GET: Cars/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
+
         // POST: Cars/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+//        [Authorize]
 //        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Brand,Model,Price,Year,Image,Link")] Car car)
         {
@@ -109,7 +114,8 @@ namespace CarRadar.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+//        [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Brand,Model,Price,Year,Image,Link")] Car car)
         {
             if (id != car.Id)
@@ -160,7 +166,8 @@ namespace CarRadar.Controllers
 
         // POST: Cars/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [Authorize]
+//        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var car = await _context.Car.FindAsync(id);
