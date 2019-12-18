@@ -15,10 +15,13 @@ namespace CarRadar.Controllers
     public class CarsController : Controller
     {
         private readonly CarRadarContext _context;
+        private readonly CarsRepository _repository;
 
-        public CarsController(CarRadarContext context)
+
+        public CarsController(CarRadarContext context, CarsRepository carsRepository)
         {
             _context = context;
+            _repository = carsRepository;
         }
 
         // GET: Cars

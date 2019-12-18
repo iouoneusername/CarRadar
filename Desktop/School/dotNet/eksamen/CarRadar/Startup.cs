@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AutoMapper;
+using CarRadar.Models;
 
 namespace CarRadar
 {
@@ -35,7 +36,7 @@ namespace CarRadar
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDbContext<CarRadarContext>(options => options.UseSqlite(Configuration.GetConnectionString("CarsConnection")));
-
+            services.AddTransient<CarsRepository>();
 
             services.Configure<IdentityOptions>(options =>
             {

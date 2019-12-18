@@ -8,7 +8,7 @@ namespace CarRadar.Models
        public AutoMapping()
         {
             CreateMap<Car, CarPublic>();
-            CreateMap<CarPublic, Car>();
+//            CreateMap<CarPublic, Car>();
         }
     }
 }
