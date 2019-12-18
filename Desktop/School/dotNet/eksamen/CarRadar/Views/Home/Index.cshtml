@@ -3,6 +3,36 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to CarRadar</h1>
+    <h3 class="description">
+        At CarRadar we scan all the major car sales websites, and gather them right
+        here in one place. With this tool you no longer have to search for the same
+        cars on 10 different platform.
+    </h3>
+
+    <a id="goToSearch" href="/Cars">FIND USED CAR NOW &#8594;</a>
 </div>
+
+
+
+<script type="text/javascript" >
+
+$("button").click(function(){
+  $.get("https://friteori.com/loadCars.php", function(data, status){
+
+    var cars = JSON.parse(data);
+    
+    for (e in cars){
+        $.post( "Cars/Create", { Brand: cars[e]["brand"],
+                Model: cars[e]["model"],
+                Price: cars[e]["price"],
+                Year: cars[e]["year"],
+                Image: cars[e]["img"],
+                Link: cars[e]["url"] });
+    }    
+  });
+});
+
+
+
+</script>

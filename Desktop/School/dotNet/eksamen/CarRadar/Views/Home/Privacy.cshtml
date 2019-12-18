@@ -1,6 +1,112 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Price calculator";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+
+<div class="advice_body">
+		        For at give dig et bedre overblik over økonimien ved en bil, har vi sammensat et skema som indikerer hvor meget bilen vil koste dig i brændstof og afgifter.
+		        Kig på din estimerede årlige kørsel, samt bilens brændstofforbrug og brændstoftype for at få et estimat. Så ved du hvad der passer bedst ind i din økonomi.
+		        Du kan altså også bruge skemaet til at se, hvor langt bilen som minimum skal køre på literen, for ikke at overskride dit budget.
+		        
+		        <br><br>
+		        <div id="price_control">
+		            <div id="miles_label">
+		                Hvor mange kilometer regner du med at køre om året?
+		            </div><br>
+	    	        <input id="miles_input" type"number" value="10000"/>
+    		        <div id="miles_button" onclick="generatePriceSchema(document.getElementById('miles_input').value)"> Vis skema </div>
+    		    </div>
+		    </div>
+		   
+		    
+		    <table id="price_schema">
+		    </table>
+
+<script>
+	
+var pricing =   [
+                    [56.3,330,130,330,460],
+                    [50.0,330,130,330,500],
+                    [45.0,330,130,370,520],
+                    [44.4,330,130,370,540],
+                    [41.0,330,130,390,540],
+                    [40.0,330,130,390,560],
+                    [37.6,330,130,410,560],
+                    [36.4,330,130,410,590],
+                    [33.3,330,130,430,590],
+                    [32.1,330,130,460,590],
+                    [28.6,330,610,460,1110],
+                    [28.1,330,610,500,1110],
+                    [25.0,330,1090,500,1630],
+                    [22.5,330,1510,540,1760],
+                    [22.2,330,1940,540,2190],
+                    [20.5,330,1940,580,2190],
+                    [20.0,330,2340,580,2590],
+                    [18.8,640,2340,890,2590],
+                    [18.2,640,2770,890,3020],
+                    [17.3,940,2770,1190,3020],
+                    [16.7,940,3190,1190,3440],
+                    [16.1,1260,3190,1510,3440],
+                    [15.4,1260,3610,1510,3860],
+                    [15.0,1570,3610,1820,3860],
+                    [14.3,1570,4050,1820,4300],
+                    [14.1,1870,4050,2120,4300],
+                    [13.3,1870,4470,2120,4720],
+                    [13.2,2180,4470,2430,4720],
+                    [12.5,2180,4910,2430,5160],
+                    [11.9,2480,5320,2730,5570],
+                    [11.8,2480,5740,2730,5990],
+                    [11.3,2790,5740,3040,5990],
+                    [11.1,2790,6590,3040,6840],
+                    [10.5,3100,6590,3350,6840],
+                    [10.2,3410,6590,3660,6840],
+                    [10.0,3410,7440,3660,7690],
+                    [9.4,4010,7440,4260,7690],
+                    [9.1,4010,8270,4260,8520],
+                    [8.7,4650,8270,4900,8520],
+                    [8.3,4650,9140,4900,9390],
+                    [8.1,5260,9140,5510,9390],
+                    [7.7,5260,9940,5510,10190],
+                    [7.5,5870,9940,6120,10190],
+                    [7.1,5870,9940,6120,11040],
+                    [7.0,6480,10790,6730,11040],
+                    [6.7,6480,11670,6730,11920],
+                    [6.6,7110,11670,7360,11920],
+                    [6.3,7110,12490,7360,12740],
+                    [6.2,7720,12490,7970,12740],
+                    [5.9,7720,13350,7970,13600],
+                    [5.6,8330,14220,8580,14470],
+                    [5.4,8970,15060,9220,15310],
+                    [5.3,8970,15970,9220,16220],
+                    [5.1,9580,15970,9830,16220],
+                    [5.0,9580,16840,9830,17090],
+                    [4.8,10190,16840,10440,17090],
+                    [4.5,10800,16840,11050,17090],
+                    [0.1,11430,16840,11680,17090]
+                ];
+                        
+        function generatePriceSchema(km){
+            temp_html = "<tr><th>Km/l</th><th>Årlig kørsel</th><th>Benzin ældre end okt-2017</th><th>Diesel ældre end okt-2017</th><th>Benzin nyere end okt-2017</th><th>Diesel nyere end okt-2017</th></tr>";
+            for (e in pricing){
+                let fuelUsed = (km/pricing[e][0]);
+                temp_html += "<tr>";
+                temp_html +=    "<td>> "+pricing[e][0]+"</td>";
+                temp_html +=    "<td>"+numberWithCommas(km)+" km</td>";
+                for(i = 1; i < 5; i++){
+                    let fee = pricing[e][i]*2;
+                    temp_html +=    "<td><span><b>Afgift</b><br>"+fee+" kr</span> <span><b>Pr. km</b><br>"+((fee+(fuelUsed*10))/km).toFixed(2)+" kr</span><span><b>Samlet</b><br>"+(fee+(fuelUsed*10)).toFixed(0)+" kr/år</span></td>";
+                }
+                temp_html += "</tr>";
+            }
+            document.getElementById("price_schema").innerHTML = temp_html;
+        }
+        
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        } 
+        
+        generatePriceSchema(10000);
+
+</script>

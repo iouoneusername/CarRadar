@@ -11,6 +11,7 @@ using AutoMapper;
 
 namespace CarRadar.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class Cars : ControllerBase

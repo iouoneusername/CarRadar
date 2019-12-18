@@ -1,5 +1,5 @@
 {
-  "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/CarRadar.csproj",
+  "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/CarRadar.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -9713,7 +9713,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The name of the action method.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Route\" /> or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Page\" /> is non-<c>null</c>.\n            </remarks>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Action"
@@ -9727,7 +9727,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The name of the area.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Route\" /> is non-<c>null</c>.\n            </remarks>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Area"
@@ -9741,7 +9741,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The name of the controller.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Route\" /> or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Page\" /> is non-<c>null</c>.\n            </remarks>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Controller"
@@ -9755,7 +9755,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The URL fragment name.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Fragment"
@@ -9769,7 +9769,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The host name.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Host"
@@ -9783,7 +9783,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The name of the page.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Route\" /> or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Action\" />, <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Controller\" />\n            is non-<c>null</c>.\n            </remarks>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Page"
@@ -9797,7 +9797,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The name of the page handler.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Route\" /> or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Action\" />, or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Controller\" />\n            is non-<c>null</c>.\n            </remarks>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "PageHandler"
@@ -9811,7 +9811,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The protocol for the URL, such as \"http\" or \"https\".\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Protocol"
@@ -9825,7 +9825,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            Name of the route.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if one of <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Action\" />, <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Controller\" />, <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Area\" /> \n            or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Page\" /> is non-<c>null</c>.\n            </remarks>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Route"
@@ -9839,7 +9839,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": "asp-route-",
             "IndexerTypeName": "System.String",
-            "Documentation": "\n            <summary>\n            Additional parameters for the route.\n            </summary>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "RouteValues"
@@ -14344,72 +14344,72 @@
   "RootNamespace": "CarRadar",
   "Documents": [
     {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Areas/Identity/Pages/_ViewStart.cshtml",
-      "TargetPath": "Areas/Identity/Pages/_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Cars/Details.cshtml",
-      "TargetPath": "Views/Cars/Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Home/Index.cshtml",
-      "TargetPath": "Views/Home/Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views/Home/Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Shared/Error.cshtml",
-      "TargetPath": "Views/Shared/Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Shared/_LoginPartial.cshtml",
-      "TargetPath": "Views/Shared/_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Cars/Create.cshtml",
-      "TargetPath": "Views/Cars/Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Cars/Edit.cshtml",
-      "TargetPath": "Views/Cars/Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views/Shared/_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/_ViewImports.cshtml",
-      "TargetPath": "Views/_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/_ViewStart.cshtml",
-      "TargetPath": "Views/_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Cars/Index.cshtml",
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Cars/Index.cshtml",
       "TargetPath": "Views/Cars/Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/thomas/Desktop/School/dotNet/BilRadar/CarRadar/Views/Cars/Delete.cshtml",
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views/Shared/_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Cars/Details.cshtml",
+      "TargetPath": "Views/Cars/Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Home/Index.cshtml",
+      "TargetPath": "Views/Home/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views/Home/Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Areas/Identity/Pages/_ViewStart.cshtml",
+      "TargetPath": "Areas/Identity/Pages/_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Cars/Edit.cshtml",
+      "TargetPath": "Views/Cars/Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Shared/_LoginPartial.cshtml",
+      "TargetPath": "Views/Shared/_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/_ViewStart.cshtml",
+      "TargetPath": "Views/_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Shared/Error.cshtml",
+      "TargetPath": "Views/Shared/Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Cars/Create.cshtml",
+      "TargetPath": "Views/Cars/Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/_ViewImports.cshtml",
+      "TargetPath": "Views/_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/thomas/Desktop/School/dotNet/eksamen/CarRadar/Views/Cars/Delete.cshtml",
       "TargetPath": "Views/Cars/Delete.cshtml",
       "FileKind": "mvc"
     }

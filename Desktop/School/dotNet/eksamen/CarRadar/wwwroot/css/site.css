@@ -1,11 +1,17 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.navbar {
+  background-color: rgba(250, 250, 250, .2);
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  color: white !important;
 }
+
 
 /* Provide sufficient contrast against white background */
 a {
@@ -24,6 +30,10 @@ a {
   border-color: #1861ac;
 }
 
+
+.logout {
+  background-color: darkslategrey;  
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -61,6 +71,11 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-image: url(/Assets/bg.png);
+  background-size: 100% auto;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
 }
 .footer {
   position: absolute;
@@ -68,4 +83,206 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+  background-color: white;
+  color: rgb(50,50,50);
+}
+
+
+/* MY CSS */
+
+h1, h2, h3, h4, label {
+  color: white;
+}
+
+.header {
+  font-size: 2em;
+  color: white;
+}
+
+.description {
+  font-size: 1em;
+  color: white;
+  width: 100%;
+  margin-top: 3vh;
+  margin-bottom: 4vh;
+}
+
+input {
+  width: 100%;
+  line-height: 5vh;
+  height: 5vh;
+  border: 1px solid rgb(200,200,200);
+}
+
+.searches {
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+.search {
+  justify-content: space-around;
+}
+
+
+#searctBtn {
+  background-color: seagreen;
+  color: white;
+  border: none;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  height: 5vh;
+  line-height: 5vh;
+}
+
+.cars {
+  background-color: rgba(200, 200, 200, .1);
+}
+
+.car {
+  height: 46vh;
+  margin-top: 3vh;
+  color: rgb(50,50,50);
+}
+
+.cars div {
+  margin-bottom: 0!important;
+}
+
+.car-brand-and-model {
+  font-size: 1.5em;
+  line-height: 8vh;
+  height: 8vh;
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+  background-color:white;
+}
+
+.car-image {
+  width: 90%;
+  margin-left: 5%;
+  min-height: 20vh;
+  overflow: hidden;
+  background-color: grey;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.car-info {
+  font-size: .7em;
+  line-height: 2vh;
+  height: 2vh;
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+  background-color:white;
+}
+
+.car-price {
+  font-size: 1.3em;
+  line-height: 6vh;
+  height: 6vh;
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+  background-color:white;
+}
+
+.goToListing {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5vw;
+  color: white;
+}
+
+
+/* PRICE SCHEMA */
+
+#price_schema {
+  width: 100%;
+  padding: 5%;
+  padding-top: 0;
+  background-color: rgb(250,250,250);
+}
+
+tr {
+  width: calc(100% / 6);
+  color: rgb(50,50,50);
+}
+
+th, td {
+  text-align: center;
+
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+th:nth-child(even) {
+      background-color: rgb(230,230,230);
+  }
+  td:nth-child(even) {
+      background-color: rgb(230,230,230);
+  }
+  th:nth-child(odd) {
+      background-color: rgb(255,255,255);
+  }
+  td:nth-child(odd) {
+      background-color: rgb(255,255,255);
+  }
+
+td span {
+  width: 33% !important;
+  float: left;
+}
+
+#price_control {
+  width: 100%;
+}
+
+#miles_label {
+  font-size: 1.3vw;
+  line-height: 1.7vw;
+  width: 100%;
+  margin-bottom: 1%;
+}
+
+#miles_input {
+      line-height: 2vw;
+      height: 2vw;
+      width: 15%;
+      float: left;
+}
+
+#miles_button {
+      line-height: 2vw;
+      height: 2vw;
+      background-color: rgb(100,150,100);
+      width: 15%;
+      margin-left: 2%;
+      cursor: pointer;
+      text-align: center;
+      color: rgb(230,230,230);
+      float: left;
+      margin-bottom: 2vw;
+}
+
+#goToSearch {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5vw;
+  margin-top: 30vh;
+  color: white;
+}
+
+.car-options a {
+  display: block;
+  float: left;
+  width: 30%;
+  text-align: center;
+}
+
+.car-bottom {
+  background-color: rgba(200,200,200,0.2);
+  width: 90%;
+  margin-left: 5%;
 }

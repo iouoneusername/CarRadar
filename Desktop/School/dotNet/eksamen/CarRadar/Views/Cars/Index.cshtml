@@ -1,80 +1,64 @@
 @model IEnumerable<CarRadar.Models.Car>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Used Cars";
 }
 
-<h1>Index</h1>
+<div class="banner">
+    <div class="header">
+        Search car
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <div class="description">
+        BilRadar scans all the online market-places for used car ads, and collects them all
+        in one online portal to make searching for a new used car easier.
+        Input your search criteria and hit search.
+    </div>
+</div>
 
 <div class="container">
         <form asp-controller="Cars" asp-action="Index" class="searches">
-            <div class="row">
+            <div class="row search">
                 <input type="text"      name="brand"    class="col-sm-12 col-md-6 col-lg-4 col-xl-2" placeholder="Brand">
                 <input type="text"      name="model"    class="col-sm-12 col-md-6 col-lg-4 col-xl-2" placeholder="Model">
                 <input type="number"   name="priceFrom" class="col-sm-12 col-md-6 col-lg-4 col-xl-2" placeholder="Price from">
                 <input type="number"    name="priceTo"  class="col-sm-12 col-md-6 col-lg-4 col-xl-2" placeholder="Price to">
                 <input type="number"    name="yearFrom" class="col-sm-12 col-md-6 col-lg-4 col-xl-2" placeholder="Year from">
                 <input type="number"    name="yearTo"   class="col-sm-12 col-md-6 col-lg-4 col-xl-2" placeholder="Year to">
-                <input type="submit"    value="Search"  class="col-sm-12" id="searctBtn"/>
+                <input type="submit"    value="Search"  class="col-sm-12 col-md-9 col-lg-7 col-xl-5" id="searctBtn"/>
             </div>
         </form>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Brand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Model)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Link)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Link)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+    <div class="row cars">
+        @foreach (var item in Model) {
+            <div class="car col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                <div class="car-brand-and-model">
+                    @Html.DisplayFor(modelItem => item.Brand)
+                    @Html.DisplayFor(modelItem => item.Model)
+                </div>
+                @if (item.Image == ""){
+                    <div class="car-image" style="background-image: url('https://cdn4.iconfinder.com/data/icons/car-silhouettes/1000/sedan-512.png')"></div>  
+                }
+                else {
+                    <div class="car-image" style="background-image: url('@Html.DisplayFor(modelItem => item.Image)')"></div>                
+                }
+                <div class="car-info"> Year: @Html.DisplayFor(modelItem => item.Year) </div>
+                <div class="car-price"> Price: @Html.DisplayFor(modelItem => item.Price) Dkk</div>
+                <div class="car-bottom">
+                    <a href="@Html.DisplayFor(modelItem => item.Link)">
+                        <div class="goToListing">
+                            Go to listing
+                        </div>
+                    </a>
+                    <div class="car-options">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
