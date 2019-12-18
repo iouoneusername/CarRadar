@@ -36,7 +36,7 @@ namespace CarRadar
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDbContext<CarRadarContext>(options => options.UseSqlite(Configuration.GetConnectionString("CarsConnection")));
-            services.AddTransient<CarsRepository>();
+            services.AddTransient<ICarsRepository, CarsRepository>();
 
             services.Configure<IdentityOptions>(options =>
             {
